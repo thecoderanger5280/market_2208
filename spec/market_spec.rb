@@ -11,6 +11,7 @@ RSpec.describe Market do
     @item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
     @vendor1 = Vendor.new("Rocky Mountain Fresh")
     @vendor2 = Vendor.new("Ba-Nom-a-Nom")
+    @vendor3 = Vendor.new("Palisade Peach Shack")
     @market = Market.new("South Pearl Street Farmers Market")
   end
 
@@ -25,6 +26,16 @@ RSpec.describe Market do
 
     it 'has vendors' do
       expect(@market.vendors).to eq([])
+    end
+  end
+
+  describe '#add_vendor' do
+    it 'can add a vendor' do
+      @market.add_vendor(@vendor1)
+      @market.add_vendor(@vendor2)
+      @market.add_vendor(@vendor3)
+
+      expect(@market.vendors).to eq([@vendor1, @vendor2, @vendor3])
     end
   end
 end
