@@ -87,4 +87,15 @@ RSpec.describe Market do
       expect(@market.overstocked_items).to eq([@item1])
     end
   end
+
+  describe '#sorted_item_list' do
+    it 'can list the items sorted alphabetically' do
+      @vendor3.stock(@item3, 10)
+      @market.add_vendor(@vendor1)
+      @market.add_vendor(@vendor2)
+      @market.add_vendor(@vendor3)
+
+      expect(@market.sorted_item_list).to eq(["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"])
+    end
+  end
 end
