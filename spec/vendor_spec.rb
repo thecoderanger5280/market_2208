@@ -53,6 +53,8 @@ RSpec.describe Vendor do
     it 'can list the potential revenue of the vendor' do
       @vendor.stock(@item1, 55)
       expect(@vendor.potential_revenue).to eq(41.25)
+      @vendor.stock(@item2, 12)
+      expect(@vendor.potential_revenue).to eq(47.25)
     end
   end
 end
