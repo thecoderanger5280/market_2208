@@ -16,8 +16,6 @@ class Market
   end
 
   def vendors_that_sell(item)
-    @vendors.find_all do |vendor|
-      vendor.inventory[item] != 0
-    end
+    @vendors.find_all { |vendor| vendor.inventory[item] != 0 }
   end
 end
