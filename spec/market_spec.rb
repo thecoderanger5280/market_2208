@@ -14,11 +14,11 @@ RSpec.describe Market do
     @vendor3 = Vendor.new("Palisade Peach Shack")
     @market = Market.new("South Pearl Street Farmers Market")
 
-    @vendor1.stock(item1, 35)
-    @vendor1.stock(item2, 7)
-    @vendor2.stock(item4, 50)
-    @vendor2.stock(item3, 25)
-    @vendor3.stock(item1, 65)
+    @vendor1.stock(@item1, 35)
+    @vendor1.stock(@item2, 7)
+    @vendor2.stock(@item4, 50)
+    @vendor2.stock(@item3, 25)
+    @vendor3.stock(@item1, 65)
   end
 
   describe '#initialize' do
