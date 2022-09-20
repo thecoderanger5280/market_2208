@@ -21,17 +21,18 @@ class Market
 
   def total_inventory
     items = []
-    quantity = Hash.new(0)
+    quantities = Hash.new(0)
     inventory = {}
     @vendors.each do |vendor|
       # require 'pry'; binding.pry
-      items << vendor.inventory.keys
       vendor.inventory.keys.each_with_index do |item, i|
         # require 'pry'; binding.pry
-        quantity[item] += vendor.inventory.values[i]
+        items << vendor.inventory.keys[i]
+        quantities[item] += vendor.inventory.values.find_all { |value| }
       end
     end
     # require 'pry'; binding.pry
+
     unique_items = items.flatten.uniq
     unique_items.each_with_index do |item, i|
       # require 'pry'; binding.pry
